@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Maestros CL — Encuentra al maestro para tu pega</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔧</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="manifest" href="data:application/manifest+json;base64,ewogICJuYW1lIjogIk1hZXN0cm9zIENMIiwKICAic2hvcnRfbmFtZSI6ICJNYWVzdHJvc0NMIiwKICAic3RhcnRfdXJsIjogIi4iLAogICJzY29wZSI6ICIuIiwKICAiZGlzcGxheSI6ICJzdGFuZGFsb25lIiwKICAiYmFja2dyb3VuZF9jb2xvciI6ICIjMTcxOTFhIiwKICAidGhlbWVfY29sb3IiOiAiIzE3MTkxYSIsCiAgImRlc2NyaXB0aW9uIjogIkVuY3VlbnRyYSBvIHB1YmxpY2Egc2VydmljaW9zIGRlIG9maWNpb3MgZW4gQ2hpbGUiLAogICJpY29ucyI6IFsKICAgIHsKICAgICAgInNyYyI6ICJkYXRhOmltYWdlL3N2Zyt4bWwsJTNDc3ZnIHhtbG5zPSdodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2Zycgdmlld0JveD0nMCAwIDE5MiAxOTInJTNFJTNDcmVjdCB3aWR0aD0nMTkyJyBoZWlnaHQ9JzE5MicgZmlsbD0nJTIzMTcxOTFhJy8lM0UlM0N0ZXh0IHg9JzUwJTI1JyB5PSc2MCUyNScgZm9udC1mYW1pbHk9J0FyaWFsLCBzYW5zLXNlcmlmJyBmb250LXdlaWdodD0nNzAwJyBmb250LXNpemU9JzExMCcgZmlsbD0nJTIzZjViNzAwJyB0ZXh0LWFuY2hvcj0nbWlkZGxlJyUzRU0lM0MvdGV4dCUzRSUzQy9zdmclM0UiLAogICAgICAic2l6ZXMiOiAiMTkyeDE5MiIsCiAgICAgICJ0eXBlIjogImltYWdlL3N2Zyt4bWwiLAogICAgICAicHVycG9zZSI6ICJhbnkgbWFza2FibGUiCiAgICB9LAogICAgewogICAgICAic3JjIjogImRhdGE6aW1hZ2Uvc3ZnK3htbCwlM0NzdmcgeG1sbnM9J2h0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnJyB2aWV3Qm94PScwIDAgNTEyIDUxMiclM0UlM0NyZWN0IHdpZHRoPSc1MTInIGhlaWdodD0nNTEyJyBmaWxsPSclMjMxNzE5MWEnLyUzRSUzQ3RleHQgeD0nNTAlMjUnIHk9JzYwJTI1JyBmb250LWZhbWlseT0nQXJpYWwsIHNhbnMtc2VyaWYnIGZvbnQtd2VpZ2h0PSc3MDAnIGZvbnQtc2l6ZT0nMjkwJyBmaWxsPSclMjNmNWI3MDAnIHRleHQtYW5jaG9yPSdtaWRkbGUnJTNFTSUzQy90ZXh0JTNFJTNDL3N2ZyUzRSIsCiAgICAgICJzaXplcyI6ICI1MTJ4NTEyIiwKICAgICAgInR5cGUiOiAiaW1hZ2Uvc3ZnK3htbCIsCiAgICAgICJwdXJwb3NlIjogImFueSBtYXNrYWJsZSIKICAgIH0KICBdCn0K">
+<meta name="theme-color" content="#17191a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Maestros CL">
+<style>
+  :root{
+    --bg:#17191a; --panel:#1e2122; --panel-line:#33383a;
+    --ink:#eeeae1; --ink-dim:#a8a39a;
+    --accent:#f5b700; --accent-ink:#171717;
+    --biz:#3d7d8c;
+    box-sizing:border-box;
+    padding-top:env(safe-area-inset-top,0px);
+    padding-bottom:env(safe-area-inset-bottom,0px);
+  }
+  :root:not([data-theme="light"]){ }
+  :root[data-theme="dark"]{ }
+  @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){ } }
+  *{box-sizing:border-box}
+  html{scroll-padding-top:env(safe-area-inset-top,0px)}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:"Work Sans",system-ui,sans-serif;
+    line-height:1.55;
+  }
+  h1,h2,h3,.display{font-family:"Barlow Condensed",system-ui,sans-serif; font-weight:700; letter-spacing:.2px; line-height:1.05;}
+  a{color:inherit}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 24px;}
+  header{
+    position:sticky; top:0; z-index:10; top:env(safe-area-inset-top,0px);
+    background:var(--bg); border-bottom:1px solid var(--panel-line);
+  }
+  .navbar{display:flex; align-items:center; justify-content:space-between; padding:16px 24px;}
+  .logo{font-family:"Barlow Condensed"; font-weight:700; font-size:22px;}
+  .logo span{color:var(--accent);}
+  .nav-cta{
+    background:transparent; border:1px solid var(--panel-line); color:var(--ink);
+    padding:9px 16px; font-family:"Work Sans"; font-size:14px; text-decoration:none;
+  }
+  .nav-cta:hover{border-color:var(--accent); color:var(--accent);}
+
+  .hero{padding:72px 0 56px; border-bottom:1px solid var(--panel-line);}
+  .hero h1{font-size:clamp(38px,6vw,64px); max-width:14ch; margin:0 0 20px;}
+  .hero p{font-size:18px; color:var(--ink-dim); max-width:52ch; margin:0 0 32px;}
+  .hero-ctas{display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{
+    display:inline-block; padding:13px 22px; font-family:"Work Sans"; font-weight:600;
+    font-size:15px; text-decoration:none; border:1px solid transparent; cursor:pointer;
+  }
+  .btn-primary{background:var(--accent); color:var(--accent-ink);}
+  .btn-primary:hover{background:#ffcb3d;}
+  .btn-ghost{border-color:var(--biz); color:var(--ink);}
+  .btn-ghost:hover{background:rgba(61,125,140,.15);}
+  .hero-note{margin-top:20px; font-size:13px; color:var(--ink-dim);}
+
+  section{padding:56px 0; border-bottom:1px solid var(--panel-line);}
+  .section-head{max-width:60ch; margin-bottom:32px;}
+  .section-head h2{font-size:clamp(26px,3.5vw,36px); margin:0 0 10px;}
+  .section-head p{color:var(--ink-dim); margin:0; font-size:16px;}
+
+  .cats{display:grid; grid-template-columns:repeat(auto-fill,minmax(190px,1fr)); gap:1px; background:var(--panel-line); border:1px solid var(--panel-line);}
+  .cat{background:var(--panel); padding:22px 18px; min-height:108px; display:flex; flex-direction:column; justify-content:space-between;}
+  .cat b{font-size:17px;}
+  .cat small{color:var(--ink-dim); font-size:13px;}
+
+  .steps{display:grid; grid-template-columns:repeat(3,1fr); gap:28px;}
+  .step .num{font-family:"Barlow Condensed"; font-size:15px; color:var(--accent); border-bottom:1px solid var(--panel-line); padding-bottom:8px; margin-bottom:14px; display:block;}
+  .step h3{font-size:20px; margin:0 0 8px;}
+  .step p{color:var(--ink-dim); font-size:15px; margin:0;}
+
+  .tg{display:grid; grid-template-columns:1.1fr .9fr; gap:40px; align-items:start;}
+  .tg-flow{background:var(--panel); border:1px solid var(--panel-line); padding:24px;}
+  .tg-flow div{padding:10px 0; border-bottom:1px dashed var(--panel-line); font-size:15px;}
+  .tg-flow div:last-child{border-bottom:none;}
+  .tg-flow b{color:var(--accent);}
+
+  .biz{background:var(--panel); border:1px solid var(--biz); padding:32px; display:grid; grid-template-columns:1fr 1fr; gap:24px; align-items:center;}
+  .biz h2{font-size:26px; margin:0 0 10px;}
+  .biz p{color:var(--ink-dim); margin:0 0 18px; font-size:15px;}
+
+  footer{padding:40px 0 48px;}
+  .foot-row{display:flex; justify-content:space-between; flex-wrap:wrap; gap:16px; color:var(--ink-dim); font-size:14px;}
+
+  @media (max-width:760px){
+    .steps{grid-template-columns:1fr;}
+    .tg{grid-template-columns:1fr;}
+    .biz{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="navbar">
+    <div class="logo">Maestros<span>CL</span></div>
+    <a class="nav-cta" href="#telegram">Canal de Telegram</a>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="hero" style="border-top:none;">
+    <h1>El maestro que necesitas está a un mensaje de distancia.</h1>
+    <p>Publica tu oficio o encuentra soldadores, gásfiter, electricistas y constructores verificados, organizados por especialidad y comuna. Sin intermediarios, sin letra chica.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="#publicar">Publicar mi servicio</a>
+      <a class="btn btn-ghost" href="#empresas">Soy una empresa</a>
+      <button class="btn btn-ghost" id="install-btn" style="display:none;">Instalar app en tu celular</button>
+    </div>
+    <div class="hero-note" id="install-hint">Gratis para partir. Ya conectado con nuestro canal de Telegram para avisos en tiempo real.</div>
+  </section>
+
+  <section id="especialidades">
+    <div class="section-head">
+      <h2>Busca por especialidad</h2>
+      <p>Cada categoría tiene su propio listado de maestros y empresas activas en tu región.</p>
+    </div>
+    <div class="cats">
+      <div class="cat"><b>Soldadura</b><small>MIG, TIG, estructuras</small></div>
+      <div class="cat"><b>Gasfitería</b><small>Urgencias y instalaciones</small></div>
+      <div class="cat"><b>Electricidad</b><small>Certificado SEC</small></div>
+      <div class="cat"><b>Construcción</b><small>Obra gruesa y ampliaciones</small></div>
+      <div class="cat"><b>Carpintería</b><small>Muebles y tabiquería</small></div>
+      <div class="cat"><b>Pintura</b><small>Interior y exterior</small></div>
+      <div class="cat"><b>Cerrajería</b><small>Cerraduras y accesos</small></div>
+      <div class="cat"><b>Techumbre</b><small>Reparación de filtraciones</small></div>
+      <div class="cat"><b>Jardinería</b><small>Mantención y paisajismo</small></div>
+      <div class="cat"><b>Demolición</b><small>Escombros y retiro</small></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Cómo funciona</h2>
+      <p>Tres pasos, ya sea que busques trabajo o busques a alguien que lo haga.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><span class="num">01</span><h3>Crea tu perfil</h3><p>Especialidad, comuna, años de experiencia y fotos de trabajos anteriores. Toma menos de tres minutos.</p></div>
+      <div class="step"><span class="num">02</span><h3>Apareces en tu categoría</h3><p>Los que buscan un maestro te filtran por oficio y zona, y te contactan directo por WhatsApp o Telegram.</p></div>
+      <div class="step"><span class="num">03</span><h3>Construyes reputación</h3><p>Cada trabajo terminado suma calificaciones visibles, así el próximo cliente confía más rápido.</p></div>
+    </div>
+  </section>
+
+  <section id="telegram">
+    <div class="section-head">
+      <h2>Conectado a un canal de Telegram</h2>
+      <p>La web guarda los perfiles y el historial; el canal avisa apenas hay algo nuevo en tu rubro.</p>
+    </div>
+    <div class="tg">
+      <div class="tg-flow">
+        <div>Publicas tu servicio en la web <b>o</b> escribes al bot directamente.</div>
+        <div>El bot confirma tu categoría y comuna.</div>
+        <div>Tu publicación aparece en el canal de <b>Soldadura</b>, <b>Gasfitería</b>, etc. según corresponda.</div>
+        <div>Quien necesita el servicio te escribe por el mismo canal o por la web.</div>
+      </div>
+      <div>
+        <p style="color:var(--ink-dim); font-size:15px; margin-top:0;">Pensado para quien prefiere resolver todo desde el celular, sin llenar formularios largos. El bot pregunta lo mínimo: oficio, comuna y un contacto.</p>
+        <a class="btn btn-primary" href="#" style="margin-top:8px;">Unirme al canal</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="reputacion">
+    <div class="section-head">
+      <h2>Reputación que se gana, no se compra</h2>
+      <p>Solo puede calificar quien contrató al maestro por la plataforma. Los comentarios pasan un filtro automático antes de publicarse.</p>
+    </div>
+    <div class="tg">
+      <div class="tg-flow">
+        <div><b>1.</b> El cliente contacta y marca al maestro como "Contratado" desde su cuenta.</div>
+        <div><b>2.</b> Al terminar el trabajo, se habilita el botón "Calificar a este maestro" — solo para ese cliente.</div>
+        <div><b>3.</b> El comentario pasa un filtro de lenguaje ofensivo antes de quedar visible.</div>
+        <div><b>4.</b> Si el filtro lo rechaza, se pide reescribir o queda para revisión manual.</div>
+      </div>
+      <div class="cat" style="min-height:auto;">
+        <div>
+          <b>Juan P. — Soldador, Maipú</b><br>
+          <span style="color:var(--accent); font-size:18px;">★★★★★</span> <small>4.8 · 12 trabajos confirmados</small>
+        </div>
+        <div style="margin-top:14px; font-size:14px; color:var(--ink-dim); border-top:1px dashed var(--panel-line); padding-top:12px;">
+          "Llegó puntual y dejó todo limpio."<br><small>— Cliente verificado</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="empresas" style="border-bottom:none;">
+    <div class="biz">
+      <div>
+        <h2>Para empresas constructoras</h2>
+        <p>Publica varias vacantes a la vez, muestra tus proyectos terminados y accede a una base de maestros ya verificados por comuna.</p>
+        <a class="btn btn-ghost" href="#">Crear cuenta de empresa</a>
+      </div>
+      <div style="border-left:1px solid var(--panel-line); padding-left:24px; font-size:14px; color:var(--ink-dim);">
+        <div style="margin-bottom:10px;"><b style="color:var(--ink);">Plan Empresa</b><br>Vacantes ilimitadas y ficha con historial de obras.</div>
+        <div><b style="color:var(--ink);">Verificación</b><br>Sello visible para clientes que buscan mayor confianza.</div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap foot-row">
+    <div>Maestros CL — hecho para conectar oficios con quien los necesita.</div>
+    <div>Santiago, Chile</div>
+  </div>
+</footer>
+
+<script>
+try {
+  var deferredPrompt = null;
+  var installBtn = document.getElementById('install-btn');
+  var installHint = document.getElementById('install-hint');
+  var isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+  var isStandalone = window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone === true;
+
+  if (isStandalone) {
+    installHint.textContent = 'Ya tienes la app instalada. Gracias por sumarte.';
+  } else if (isIOS) {
+    installBtn.style.display = 'inline-block';
+    installBtn.textContent = 'Cómo instalar en iPhone';
+    installBtn.addEventListener('click', function(){
+      alert('En Safari: toca el ícono de compartir y luego "Agregar a pantalla de inicio".');
+    });
+  } else {
+    window.addEventListener('beforeinstallprompt', function(e){
+      e.preventDefault();
+      deferredPrompt = e;
+      installBtn.style.display = 'inline-block';
+    });
+    installBtn.addEventListener('click', function(){
+      if (deferredPrompt) {
+        deferredPrompt.prompt();
+        deferredPrompt = null;
+      }
+    });
+  }
+} catch (e) { /* instalación no disponible en este navegador */ }
+</script>
+</body>
+</html>
